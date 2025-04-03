@@ -1,6 +1,6 @@
 # Circuits
 
-This project contains the Sudoku circuit used in the zkSudoku application.
+This project contains the RLN circuits.
 
 ## Install dependencies
 
