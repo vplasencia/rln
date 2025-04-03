@@ -38,7 +38,7 @@ template RLN(MAX_DEPTH, LIMIT_BIT_SIZE) {
 
     var identityCommitment = Poseidon(2)([Ax, Ay]);
 
-    signal rateCommitment <== Poseidon(2)([identityCommitment, userMessageLimit]);
+    var rateCommitment = Poseidon(2)([identityCommitment, userMessageLimit]);
 
     // Proof of membership verification.
     // The Merkle root passed as output must be equal to that calculated within
@@ -51,7 +51,7 @@ template RLN(MAX_DEPTH, LIMIT_BIT_SIZE) {
     RangeCheck(LIMIT_BIT_SIZE)(messageId, userMessageLimit);
 
     // SSS share calculations
-    signal a1 <== Poseidon(3)([secret, scope, messageId]);
+    var a1 = Poseidon(3)([secret, scope, messageId]);
     y <== secret + a1 * x;
 
     // nullifier calculation
