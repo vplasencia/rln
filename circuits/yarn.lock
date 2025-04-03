@@ -291,6 +291,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@zk-kit/binary-merkle-root.circom@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@zk-kit/binary-merkle-root.circom@npm:1.0.0"
+  dependencies:
+    circomlib: "npm:^2.0.5"
+  checksum: 10c0/d5585d2efa0e45b79eca651659c7f2e9fa96d6ae83a7653e9dfe1c9f436071367dd01070b70dd86cefec341cd5e57c108c3ab08cde25f2fe51efb8bd4e4a28be
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^3.0.0":
   version: 3.0.0
   resolution: "abbrev@npm:3.0.0"
@@ -661,6 +670,7 @@ __metadata:
     "@types/chai": "npm:^5.2.0"
     "@types/mocha": "npm:^10.0.10"
     "@types/node": "npm:^22.13.10"
+    "@zk-kit/binary-merkle-root.circom": "npm:^1.0.0"
     chai: "npm:^5.2.0"
     circom_tester: "npm:^0.0.20"
     circomlib: "npm:^2.0.5"

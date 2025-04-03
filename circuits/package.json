@@ -25,6 +25,7 @@
         "typescript": "^5.8.2"
     },
     "dependencies": {
+        "@zk-kit/binary-merkle-root.circom": "^1.0.0",
         "circomlib": "^2.0.5"
     }
 }
