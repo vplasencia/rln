@@ -58,4 +58,4 @@ template RLN(MAX_DEPTH, LIMIT_BIT_SIZE) {
     nullifier <== Poseidon(1)([a1]);
 }
 
-component main { public [x, scope] } = RLN(20, 16);
+component main { public [x, scope] } = RLN(10, 16);

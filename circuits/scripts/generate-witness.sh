@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variable to store the name of the circuit
-CIRCUIT=sudoku
+CIRCUIT=rln
 
 # Path to the directory where the circuit is located
 PATH_CIRCUIT=./circuits/${CIRCUIT}

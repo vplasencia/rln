@@ -3,12 +3,12 @@
 echo "----- Remove build folder -----"
 ./scripts/removeBuildFolder.sh
 
-echo "----- Sudoku -----"
-echo "----- Sudoku Groth16 -----"
+echo "----- RLN -----"
+echo "----- RLN Groth16 -----"
 ./scripts/executeGroth16.sh
-echo "----- Sudoku Plonk -----"
+echo "----- RLN Plonk -----"
 ./scripts/executePlonk.sh
-echo "----- Sudoku Fflonk -----"
+echo "----- RLN Fflonk -----"
 ./scripts/executeFflonk.sh
 
 

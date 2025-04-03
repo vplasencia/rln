@@ -1,0 +1,10 @@
+{
+    "secret": "1234",
+    "userMessageLimit": "3",
+    "messageId": "1",
+    "merkleProofLength": "3",
+    "merkleProofIndices": [1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    "merkleProofSiblings": [2, 12583541437132735734108669866114103169564651237895298778035846191048104863326, 4, 0, 0, 0, 0, 0, 0, 0],
+    "x": "1",
+    "scope": "2"
+}
