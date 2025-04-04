@@ -48,7 +48,9 @@ template RLN(MAX_DEPTH, LIMIT_BIT_SIZE) {
     merkleRoot <== BinaryMerkleRoot(MAX_DEPTH)(rateCommitment, merkleProofLength, merkleProofIndices, merkleProofSiblings);
 
     // messageId range check
-    RangeCheck(LIMIT_BIT_SIZE)(messageId, userMessageLimit);
+    // Check 0 <= messageId < userMessageLimit
+    var isInRange = RangeCheck(LIMIT_BIT_SIZE)(messageId, userMessageLimit);
+    isInRange === 1;
 
     // SSS share calculations
     var a1 = Poseidon(3)([secret, scope, messageId]);
