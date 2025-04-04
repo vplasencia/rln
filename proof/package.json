@@ -1,0 +1,10 @@
+{
+  "name": "proof",
+  "packageManager": "yarn@4.7.0",
+  "dependencies": {
+    "snarkjs": "^0.7.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.3"
+  }
+}
