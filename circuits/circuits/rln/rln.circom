@@ -52,7 +52,7 @@ template RLN(MAX_DEPTH, LIMIT_BIT_SIZE) {
 
     // SSS share calculations
     var a1 = Poseidon(3)([secret, scope, messageId]);
-    y <== secret + a1 * x;
+    y <== a1 * x + secret;
 
     // nullifier calculation
     nullifier <== Poseidon(1)([a1]);
