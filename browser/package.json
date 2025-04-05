@@ -11,6 +11,7 @@
     "prettier:write": "prettier -w ."
   },
   "dependencies": {
+    "@semaphore-protocol/core": "^4.9.2",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
