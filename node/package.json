@@ -1,0 +1,21 @@
+{
+  "name": "proof",
+  "packageManager": "yarn@4.7.0",
+  "scripts": {
+    "benchmarks": "tsx ./src/generate-proof.ts && tsx ./src/verify-proof.ts",
+    "benchmarks:generate-proof": "tsx ./src/generate-proof.ts",
+    "benchmarks:verify-proof": "tsx ./src/verify-proof.ts",
+    "prettier": "prettier -c .",
+    "prettier:write": "prettier -w ."
+  },
+  "dependencies": {
+    "@semaphore-protocol/core": "^4.9.2",
+    "tinybench": "^2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

@@ -6,9 +6,9 @@ import {
   verifyProof as verifyProofSemaphore,
   type SemaphoreProof
 } from "@semaphore-protocol/core"
-import generateProof from "../src/generate-proof"
-import verifyProof from "../src/verify-proof"
-import { RLNProof } from "../src/types/index"
+import generateProof from "../../proof/src/generate-proof"
+import verifyProof from "../../proof/src/verify-proof"
+import { RLNProof } from "../../proof/src/types"
 
 const generateTable = (task: Task) => {
   if (task && task.name && task.result) {
