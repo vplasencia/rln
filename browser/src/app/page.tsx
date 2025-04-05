@@ -26,10 +26,8 @@ export default function Home() {
     const index = Math.floor(members.length / 2)
     const member = new Identity(index.toString())
     const [proof, time0] = await run(async () => generateProofSemaphore(member, group, 1, 1))
-    console.log("time0", time0)
     timeValues.push(Number(time0.toFixed(3)))
     const [, time1] = await run(async () => verifyProofSemaphore(proof))
-    console.log("time1", time1)
     timeValues.push(Number(time1.toFixed(3)))
     setSemaphoreTimes(timeValues)
   }
@@ -47,8 +45,8 @@ export default function Home() {
     const merkleTreeDepth = merkleProofLength !== 0 ? merkleProofLength : 1
 
     const [proof, time0] = await run(async () => generateProof(member, group, 1, 1, 0, 10, undefined, {
-      zkey: `../rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-      wasm: `../rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+      zkey: `/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+      wasm: `/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
     }))
 
     timeValues.push(Number(time0.toFixed(3)))
