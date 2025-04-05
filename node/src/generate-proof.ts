@@ -57,8 +57,8 @@ async function main() {
       "RLN - Generate Proof 1 Member",
       async () => {
         await generateProof(member, group, 1, 1, 0, 10, undefined, {
-          zkey: `../rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-          wasm: `../rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+          zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+          wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
         })
       },
       {
@@ -91,8 +91,8 @@ async function main() {
       "RLN - Generate Proof 100 Members",
       async () => {
         await generateProof(member, group, 1, 1, 0, 10, undefined, {
-          zkey: `../rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-          wasm: `../rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+          zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+          wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
         })
       },
       {
@@ -126,8 +126,8 @@ async function main() {
       "RLN - Generate Proof 500 Members",
       async () => {
         await generateProof(member, group, 1, 1, 0, 10, undefined, {
-          zkey: `../rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-          wasm: `../rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+          zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+          wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
         })
       },
       {
@@ -161,8 +161,8 @@ async function main() {
       "RLN - Generate Proof 1000 Members",
       async () => {
         await generateProof(member, group, 1, 1, 0, 10, undefined, {
-          zkey: `../rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-          wasm: `../rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+          zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+          wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
         })
       },
       {
@@ -196,8 +196,8 @@ async function main() {
       "RLN - Generate Proof 2000 Members",
       async () => {
         await generateProof(member, group, 1, 1, 0, 10, undefined, {
-          zkey: `../rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-          wasm: `../rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+          zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+          wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
         })
       },
       {
@@ -213,26 +213,26 @@ async function main() {
         }
       }
     )
-    .add(
-      "Semaphore - Generate Proof 10000 Members",
-      async () => {
-        await generateProofSemaphore(member, group, 1, 1)
-      },
-      {
-        beforeAll: () => {
-          members = generateMembers(10000)
-          group = new Group(members)
-          const index = Math.floor(members.length / 2)
-          member = new Identity(index.toString())
-        }
-      }
-    )
+    // .add(
+    //   "Semaphore - Generate Proof 10000 Members",
+    //   async () => {
+    //     await generateProofSemaphore(member, group, 1, 1)
+    //   },
+    //   {
+    //     beforeAll: () => {
+    //       members = generateMembers(10000)
+    //       group = new Group(members)
+    //       const index = Math.floor(members.length / 2)
+    //       member = new Identity(index.toString())
+    //     }
+    //   }
+    // )
     // .add(
     //   "RLN - Generate Proof 10000 Members",
     //   async () => {
     //     await generateProof(member, group, 1, 1, 0, 10, undefined, {
-    //       zkey: `../rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-    //       wasm: `../rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+    //       zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+    //       wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
     //     })
     //   },
     //   {

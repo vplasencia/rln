@@ -89,8 +89,8 @@ async function main() {
             10,
             undefined,
             {
-              zkey: `../rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-              wasm: `../rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+              zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+              wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
             }
           )
         }
@@ -135,8 +135,8 @@ async function main() {
             10,
             undefined,
             {
-              zkey: `../rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-              wasm: `../rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+              zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+              wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
             }
           )
         }
@@ -181,8 +181,8 @@ async function main() {
             10,
             undefined,
             {
-              zkey: `../rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-              wasm: `../rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+              zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+              wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
             }
           )
         }
@@ -227,8 +227,8 @@ async function main() {
             10,
             undefined,
             {
-              zkey: `../rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-              wasm: `../rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+              zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+              wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
             }
           )
         }
