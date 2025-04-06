@@ -17,6 +17,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [resultGenerateProof, setResultGenerateProof] = useState("")
   const [resultVerifyProof, setResultVerifyProof] = useState("")
+  const [log, setLog] = useState("")
 
   const generateText = (timeFunctions: number[]) => {
     let textGenerateProof = ""
@@ -50,30 +51,43 @@ export default function Home() {
     setResultVerifyProof(textVerifyProof)
   }
 
+  const addLog = async (text: string) => {
+    setLog(text)
+    // Give React a chance to render the UI so that it does not become unresponsive
+    await new Promise((resolve) => setTimeout(resolve, 0))
+  }
+
   const runFunctions = async () => {
     setLoading(true)
-    // Give React a chance to render the loading spinner
-    await new Promise((resolve) => setTimeout(resolve, 0))
 
     setResultGenerateProof("")
     setResultVerifyProof("")
 
     const timeValues = []
 
+    await addLog("Generating Group")
+
     const members = generateMembers(groupMembers)
     const group = new Group(members)
     const index = Math.floor(members.length / 2)
     const member = new Identity(index.toString())
+
+    await addLog("Generating Semaphore Proof")
 
     // Semaphore Functions
     const [semaphoreProof, time0] = await run(async () =>
       generateProofSemaphore(member, group, 1, 1)
     )
     timeValues.push(Number(time0.toFixed(3)))
+
+    await addLog("Verifying Semaphore Proof")
+
     const [, time1] = await run(async () =>
       verifyProofSemaphore(semaphoreProof)
     )
     timeValues.push(Number(time1.toFixed(3)))
+
+    await addLog("Generating RLN Proof")
 
     // RLN Functions
     const leafIndex = group.indexOf(member.commitment)
@@ -87,10 +101,13 @@ export default function Home() {
         wasm: `/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
       })
     )
-
     timeValues.push(Number(time2.toFixed(3)))
+    await addLog("Verifying RLN Proof")
+
     const [, time3] = await run(async () => verifyProof(proof))
     timeValues.push(Number(time3.toFixed(3)))
+    
+    await addLog("Creating summary")
 
     setTimes(timeValues)
 
@@ -157,7 +174,7 @@ export default function Home() {
       <div className="mt-10 flex justify-center items-center">
         {loading && (
           <div className="flex gap-2">
-            <div className="loader"></div> Generating benchmarks
+            <div className="loader"></div> {log}
           </div>
         )}
       </div>
