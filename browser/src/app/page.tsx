@@ -8,8 +8,8 @@ import {
 import { run } from "@/utils/run"
 import { generateMembers } from "@/utils/generate-members"
 import { useState } from "react"
-import generateProof from "../../../proof/src/generate-proof"
-import verifyProof from "../../../proof/src/verify-proof"
+import generateProof from "../../proof/generate-proof"
+import verifyProof from "../../proof/verify-proof"
 
 export default function Home() {
   const [groupMembers, setGroupMembers] = useState<number>(100)
