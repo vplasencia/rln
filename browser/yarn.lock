@@ -804,6 +804,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/snarkjs@npm:^0":
+  version: 0.7.9
+  resolution: "@types/snarkjs@npm:0.7.9"
+  checksum: 10c0/efa31acd19d8ae28a08f940a7ae610ee49d81c547cd3ecf4d730949df5f8bc058a04b0fcbb8dad371176826ddd63973ec694855767e441bf866ff1d45668b16c
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/eslint-plugin@npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0":
   version: 8.29.0
   resolution: "@typescript-eslint/eslint-plugin@npm:8.29.0"
@@ -1075,6 +1082,16 @@ __metadata:
   dependencies:
     buffer: "npm:^6.0.3"
   checksum: 10c0/e48b6d319eea6247efdc2c7c93140406adf20edc072000ac5e865f7758f653340d310a640603e70940f7e8041fffeb118c4a071618de7dc1d170f6c628195905
+  languageName: node
+  linkType: hard
+
+"@zk-kit/utils@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "@zk-kit/utils@npm:1.4.1"
+  dependencies:
+    buffer: "npm:^6.0.3"
+    ethers: "npm:6.13.5"
+  checksum: 10c0/22bf32a16e4d7d7ef5f14678235a4fe5ed53c5e84f7518cd27630e142e2dc775620c3b0eaf47d7311c7796570b8a1fe1482fb71515e3f19117ffe917aafbf19b
   languageName: node
   linkType: hard
 
@@ -1376,12 +1393,16 @@ __metadata:
     "@types/node": "npm:^20"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
+    "@types/snarkjs": "npm:^0"
+    "@zk-kit/utils": "npm:^1.4.1"
     eslint: "npm:^9"
     eslint-config-next: "npm:15.2.4"
+    ethers: "npm:6.13.5"
     next: "npm:15.2.4"
     prettier: "npm:^3.5.3"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
+    snarkjs: "npm:^0.7.5"
     tailwindcss: "npm:^4"
     typescript: "npm:^5"
   languageName: unknown
@@ -1477,6 +1498,17 @@ __metadata:
   bin:
     calcwit: calcwit.js
   checksum: 10c0/231f97810828c7ac297e891ebccd853999811ecb3003ee5d6c221f66bc51af77883121b60f2cd10a9338bde4a21ed150c0527b593b2ee0486fd23697644ee96e
+  languageName: node
+  linkType: hard
+
+"circom_runtime@npm:0.1.28":
+  version: 0.1.28
+  resolution: "circom_runtime@npm:0.1.28"
+  dependencies:
+    ffjavascript: "npm:0.3.1"
+  bin:
+    calcwit: calcwit.js
+  checksum: 10c0/f2636b3cf553ea37701b527331ff740be7e31d51dc367c7f7bdffb69cf3a0d86c34ce215e4dbc0ad47f9c221c129ab11b111c6814e009c4d469592d73ab3c513
   languageName: node
   linkType: hard
 
@@ -2178,6 +2210,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ethers@npm:6.13.5":
+  version: 6.13.5
+  resolution: "ethers@npm:6.13.5"
+  dependencies:
+    "@adraffy/ens-normalize": "npm:1.10.1"
+    "@noble/curves": "npm:1.2.0"
+    "@noble/hashes": "npm:1.3.2"
+    "@types/node": "npm:22.7.5"
+    aes-js: "npm:4.0.0-beta.5"
+    tslib: "npm:2.7.0"
+    ws: "npm:8.17.1"
+  checksum: 10c0/64bc7b8907de199392b8a88c15c9a085892919cff7efa2e5326abc7fe5c426001726c51d91e10c74e5fc5e2547188297ce4127f6e52ea42a97ade0b2ae474677
+  languageName: node
+  linkType: hard
+
 "ethers@npm:^6.13.4":
   version: 6.13.6
   resolution: "ethers@npm:6.13.6"
@@ -2279,7 +2326,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ffjavascript@npm:^0.3.0":
+"ffjavascript@npm:0.3.1, ffjavascript@npm:^0.3.0":
   version: 0.3.1
   resolution: "ffjavascript@npm:0.3.1"
   dependencies:
@@ -3979,6 +4026,26 @@ __metadata:
   bin:
     snarkjs: build/cli.cjs
   checksum: 10c0/530abe64711f73bd44e24caca1be47bba15eb6017a6ce46dd1b655d416376065c39042df8cb8ebb7cf74291760ad7442b19dc947ea6e57d28abbb14e23d7c6d2
+  languageName: node
+  linkType: hard
+
+"snarkjs@npm:^0.7.5":
+  version: 0.7.5
+  resolution: "snarkjs@npm:0.7.5"
+  dependencies:
+    "@iden3/binfileutils": "npm:0.0.12"
+    bfj: "npm:^7.0.2"
+    blake2b-wasm: "npm:^2.4.0"
+    circom_runtime: "npm:0.1.28"
+    ejs: "npm:^3.1.6"
+    fastfile: "npm:0.0.20"
+    ffjavascript: "npm:0.3.1"
+    js-sha3: "npm:^0.8.0"
+    logplease: "npm:^1.2.15"
+    r1csfile: "npm:0.0.48"
+  bin:
+    snarkjs: build/cli.cjs
+  checksum: 10c0/bc9eb1dac9c5248a4952635edc015185c5f9f268f6d2d29b32934e0b08bc284caaeba7fbc6d712ecff8a4e17c66433ba6b2f2ab5d1a6bb4704c30110fb18e9aa
   languageName: node
   linkType: hard
 
