@@ -10,10 +10,11 @@ import { generateMembers } from "@/utils/generate-members"
 import { useState } from "react"
 import generateProof from "../../proof/generate-proof"
 import verifyProof from "../../proof/verify-proof"
+import prettyMilliseconds from 'pretty-ms';
 
 export default function Home() {
   const [groupMembers, setGroupMembers] = useState<number>(100)
-  const [times, setTimes] = useState<number[]>([])
+  const [times, setTimes] = useState<string[]>([])
   const [loading, setLoading] = useState(false)
   const [resultGenerateProof, setResultGenerateProof] = useState("")
   const [resultVerifyProof, setResultVerifyProof] = useState("")
@@ -78,14 +79,14 @@ export default function Home() {
     const [semaphoreProof, time0] = await run(async () =>
       generateProofSemaphore(member, group, 1, 1)
     )
-    timeValues.push(Number(time0.toFixed(3)))
+    timeValues.push(prettyMilliseconds(time0))
 
     await addLog("Verifying Semaphore Proof")
 
     const [, time1] = await run(async () =>
       verifyProofSemaphore(semaphoreProof)
     )
-    timeValues.push(Number(time1.toFixed(3)))
+    timeValues.push(prettyMilliseconds(time1))
 
     await addLog("Generating RLN Proof")
 
@@ -101,11 +102,12 @@ export default function Home() {
         wasm: `/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
       })
     )
-    timeValues.push(Number(time2.toFixed(3)))
+    timeValues.push(prettyMilliseconds(time2))
+
     await addLog("Verifying RLN Proof")
 
     const [, time3] = await run(async () => verifyProof(proof))
-    timeValues.push(Number(time3.toFixed(3)))
+    timeValues.push(prettyMilliseconds(time3))
     
     await addLog("Creating summary")
 
@@ -148,11 +150,11 @@ export default function Home() {
             <div className="flex flex-col gap-4 mt-5">
               <div className="flex gap-2">
                 <div>Generate Proof:</div>
-                <div> {times[0] ? times[0] : 0} ms</div>
+                <div> {times[0] ? times[0] : "0ms"}</div>
               </div>
               <div className="flex gap-2">
                 <div>Verify Proof:</div>
-                <div>{times[1] ? times[1] : 0} ms</div>
+                <div>{times[1] ? times[1] : "0ms"}</div>
               </div>
             </div>
           </div>
@@ -161,11 +163,11 @@ export default function Home() {
             <div className="flex flex-col gap-4 mt-5">
               <div className="flex gap-2">
                 <div>Generate Proof:</div>
-                <div>{times[2] ? times[2] : 0} ms</div>
+                <div>{times[2] ? times[2] : "0ms"}</div>
               </div>
               <div className="flex gap-2">
                 <div>Verify Proof:</div>
-                <div>{times[3] ? times[3] : 0} ms</div>
+                <div>{times[3] ? times[3] : "0ms"}</div>
               </div>
             </div>
           </div>
