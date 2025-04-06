@@ -1,6 +1,6 @@
 import { Bench, Task } from "tinybench"
 import { Identity, Group, generateProof as generateProofSemaphore} from "@semaphore-protocol/core"
-import generateProof from "../../proof/src/generate-proof"
+import generateProof from "../../browser/proof/generate-proof"
 
 const generateTable = (task: Task) => {
   if (task && task.name && task.result) {
