@@ -18,7 +18,7 @@ const generateTable = (task: Task) => {
 }
 
 async function main() {
-    const samples = 1
+    const samples = 10
 
     const bench = new Bench({ time: 0, iterations: samples })
 
