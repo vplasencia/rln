@@ -1,5 +1,9 @@
 import { Bench, Task } from "tinybench"
-import { Identity, Group, generateProof as generateProofSemaphore} from "@semaphore-protocol/core"
+import {
+  Identity,
+  Group,
+  generateProof as generateProofSemaphore
+} from "@semaphore-protocol/core"
 import generateProof from "../../browser/proof/generate-proof"
 
 const generateTable = (task: Task) => {
@@ -18,9 +22,9 @@ const generateTable = (task: Task) => {
 }
 
 async function main() {
-    const samples = 10
+  const samples = 10
 
-    const bench = new Bench({ time: 0, iterations: samples })
+  const bench = new Bench({ time: 0, iterations: samples })
 
   // const bench = new Bench()
 
@@ -213,47 +217,46 @@ async function main() {
         }
       }
     )
-    // .add(
-    //   "Semaphore - Generate Proof 10000 Members",
-    //   async () => {
-    //     await generateProofSemaphore(member, group, 1, 1)
-    //   },
-    //   {
-    //     beforeAll: () => {
-    //       members = generateMembers(10000)
-    //       group = new Group(members)
-    //       const index = Math.floor(members.length / 2)
-    //       member = new Identity(index.toString())
-    //     }
-    //   }
-    // )
-    // .add(
-    //   "RLN - Generate Proof 10000 Members",
-    //   async () => {
-    //     await generateProof(member, group, 1, 1, 0, 10, undefined, {
-    //       zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-    //       wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
-    //     })
-    //   },
-    //   {
-    //     beforeAll: () => {
-    //       members = generateMembers(10000)
-    //       group = new Group(members)
-    //       const index = Math.floor(members.length / 2)
-    //       member = new Identity(index.toString())
-    //       const leafIndex = group.indexOf(member.commitment)
-    //       const merkleProof = group.generateMerkleProof(leafIndex)
-    //       const merkleProofLength = merkleProof.siblings.length
-    //       merkleTreeDepth = merkleProofLength !== 0 ? merkleProofLength : 1
-    //     }
-    //   }
-    // )
+  // .add(
+  //   "Semaphore - Generate Proof 10000 Members",
+  //   async () => {
+  //     await generateProofSemaphore(member, group, 1, 1)
+  //   },
+  //   {
+  //     beforeAll: () => {
+  //       members = generateMembers(10000)
+  //       group = new Group(members)
+  //       const index = Math.floor(members.length / 2)
+  //       member = new Identity(index.toString())
+  //     }
+  //   }
+  // )
+  // .add(
+  //   "RLN - Generate Proof 10000 Members",
+  //   async () => {
+  //     await generateProof(member, group, 1, 1, 0, 10, undefined, {
+  //       zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+  //       wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+  //     })
+  //   },
+  //   {
+  //     beforeAll: () => {
+  //       members = generateMembers(10000)
+  //       group = new Group(members)
+  //       const index = Math.floor(members.length / 2)
+  //       member = new Identity(index.toString())
+  //       const leafIndex = group.indexOf(member.commitment)
+  //       const merkleProof = group.generateMerkleProof(leafIndex)
+  //       const merkleProofLength = merkleProof.siblings.length
+  //       merkleTreeDepth = merkleProofLength !== 0 ? merkleProofLength : 1
+  //     }
+  //   }
+  // )
 
+  // await bench.warmup()
+  await bench.run()
 
-    // await bench.warmup()
-    await bench.run()
-  
-    const table = bench.table((task) => generateTable(task))
+  const table = bench.table((task) => generateTable(task))
 
   // Add column to show how many times V4 is faster/slower than V3.
   // Formula: highest average execution time divided by lowest average execution time.
@@ -269,13 +272,13 @@ async function main() {
       if (v3AvgExecTime === undefined || v4AvgExecTime === undefined) return
 
       if (v3AvgExecTime > v4AvgExecTime) {
-        rowInfo["Relative to Semaphore"] = `${(v3AvgExecTime / v4AvgExecTime).toFixed(
-          2
-        )} x faster`
+        rowInfo["Relative to Semaphore"] = `${(
+          v3AvgExecTime / v4AvgExecTime
+        ).toFixed(2)} x faster`
       } else {
-        rowInfo["Relative to Semaphore"] = `${(v4AvgExecTime / v3AvgExecTime).toFixed(
-          2
-        )} x slower`
+        rowInfo["Relative to Semaphore"] = `${(
+          v4AvgExecTime / v3AvgExecTime
+        ).toFixed(2)} x slower`
       }
     }
   })

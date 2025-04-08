@@ -1,5 +1,5 @@
-import Head from "next/head";
-import GoBack from "@/components/GoBack";
+import Head from "next/head"
+import GoBack from "@/components/GoBack"
 
 export default function About() {
   return (
@@ -21,5 +21,5 @@ export default function About() {
         </div>
       </div>
     </div>
-  );
+  )
 }

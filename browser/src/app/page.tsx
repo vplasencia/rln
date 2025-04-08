@@ -10,7 +10,7 @@ import { generateMembers } from "@/utils/generate-members"
 import { useState } from "react"
 import generateProof from "../../proof/generate-proof"
 import verifyProof from "../../proof/verify-proof"
-import prettyMilliseconds from 'pretty-ms';
+import prettyMilliseconds from "pretty-ms"
 
 export default function Home() {
   const [groupMembers, setGroupMembers] = useState<number>(100)
@@ -108,7 +108,7 @@ export default function Home() {
 
     const [, time3] = await run(async () => verifyProof(proof))
     timeValues.push(prettyMilliseconds(time3))
-    
+
     await addLog("Creating summary")
 
     setTimes(timeValues)

@@ -7,7 +7,9 @@ describe("RLN circuit", function () {
     let rlnCircuit: any
 
     before(async function () {
-        rlnCircuit = await wasm_tester("circuits/rln/rln.circom", {include: ["./node_modules/@zk-kit/binary-merkle-root.circom/src", "./node_modules/circomlib/circuits"]})
+        rlnCircuit = await wasm_tester("circuits/rln/rln.circom", {
+            include: ["./node_modules/@zk-kit/binary-merkle-root.circom/src", "./node_modules/circomlib/circuits"]
+        })
     })
 
     it("Should generate the witness successfully", async function () {

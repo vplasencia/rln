@@ -1,4 +1,4 @@
-const GITHUB_LINK = "https://github.com/vplasencia/rln";
+const GITHUB_LINK = "https://github.com/vplasencia/rln"
 
 export default function ViewSourceCode() {
   return (
@@ -24,5 +24,5 @@ export default function ViewSourceCode() {
       </svg>
       <span>View Source Code</span>
     </a>
-  );
+  )
 }

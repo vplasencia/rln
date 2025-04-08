@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Semaphore & RLN Benchmarks",
-  description: "Semaphore & RLN Benchmarks App",
-};
+  description: "Semaphore & RLN Benchmarks App"
+}
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -26,5 +26,5 @@ export default function RootLayout({
         </div>
       </body>
     </html>
-  );
+  )
 }

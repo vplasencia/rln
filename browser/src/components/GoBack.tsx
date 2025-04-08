@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function GoBack() {
   return (
@@ -25,5 +25,5 @@ export default function GoBack() {
         <span>Go back</span>
       </Link>
     </div>
-  );
+  )
 }

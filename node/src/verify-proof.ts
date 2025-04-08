@@ -280,52 +280,52 @@ async function main() {
         }
       }
     )
-    // .add(
-    //   "Semaphore - Verify Proof 10000 Member",
-    //   async () => {
-    //     await verifyProofSemaphore(semaphoreProof)
-    //   },
-    //   {
-    //     beforeAll: async () => {
-    //       members = generateMembers(10000)
-    //       group = new Group(members)
-    //       const index = Math.floor(members.length / 2)
-    //       member = new Identity(index.toString())
-    //       semaphoreProof = await generateProofSemaphore(member, group, 1, 1)
-    //     }
-    //   }
-    // )
-    // .add(
-    //   "RLN - Verify Proof 10000 Member",
-    //   async () => {
-    //     await verifyProof(rlnProof)
-    //   },
-    //   {
-    //     beforeAll: async () => {
-    //       members = generateMembers(10000)
-    //       group = new Group(members)
-    //       const index = Math.floor(members.length / 2)
-    //       member = new Identity(index.toString())
-    //       const leafIndex = group.indexOf(member.commitment)
-    //       const merkleProof = group.generateMerkleProof(leafIndex)
-    //       const merkleProofLength = merkleProof.siblings.length
-    //       merkleTreeDepth = merkleProofLength !== 0 ? merkleProofLength : 1
-    //       rlnProof = await generateProof(
-    //         member,
-    //         group,
-    //         1,
-    //         1,
-    //         0,
-    //         10,
-    //         undefined,
-    //         {
-    //           zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
-    //           wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
-    //         }
-    //       )
-    //     }
-    //   }
-    // )
+  // .add(
+  //   "Semaphore - Verify Proof 10000 Member",
+  //   async () => {
+  //     await verifyProofSemaphore(semaphoreProof)
+  //   },
+  //   {
+  //     beforeAll: async () => {
+  //       members = generateMembers(10000)
+  //       group = new Group(members)
+  //       const index = Math.floor(members.length / 2)
+  //       member = new Identity(index.toString())
+  //       semaphoreProof = await generateProofSemaphore(member, group, 1, 1)
+  //     }
+  //   }
+  // )
+  // .add(
+  //   "RLN - Verify Proof 10000 Member",
+  //   async () => {
+  //     await verifyProof(rlnProof)
+  //   },
+  //   {
+  //     beforeAll: async () => {
+  //       members = generateMembers(10000)
+  //       group = new Group(members)
+  //       const index = Math.floor(members.length / 2)
+  //       member = new Identity(index.toString())
+  //       const leafIndex = group.indexOf(member.commitment)
+  //       const merkleProof = group.generateMerkleProof(leafIndex)
+  //       const merkleProofLength = merkleProof.siblings.length
+  //       merkleTreeDepth = merkleProofLength !== 0 ? merkleProofLength : 1
+  //       rlnProof = await generateProof(
+  //         member,
+  //         group,
+  //         1,
+  //         1,
+  //         0,
+  //         10,
+  //         undefined,
+  //         {
+  //           zkey: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.zkey`,
+  //           wasm: `../browser/public/rln-zk-artifacts/rln-${merkleTreeDepth}.wasm`
+  //         }
+  //       )
+  //     }
+  //   }
+  // )
 
   // await bench.warmup()
   await bench.run()

@@ -1,14 +1,14 @@
 # Circuits
 
-This project contains the RLN circuits.
+This project contains the RLN V3 circom circuits.
 
-## Install dependencies
+## Install Dependencies
 
 ```sh
 yarn
 ```
 
-## Compile circuit
+## Compile Circuit
 
 ```sh
 yarn compile
@@ -38,25 +38,39 @@ yarn plonk
 yarn fflonk
 ```
 
-## Execute all proving systems (Groth16, Plonk and Fflonk)
+## Execute All Proving Systems (Groth16, Plonk and Fflonk)
 
 ```sh
 yarn execute
 ```
 
-## Remove build folder
+## Run a Command with a Different Circuit
+
+To run a command (e.g., compile, generate-witness) with a different circuit:
+
+```sh
+yarn <command> <circuit-name>
+```
+
+Example: Compile the `withdraw.circom` circuit:
+
+```sh
+yarn compile withdraw
+```
+
+## Remove Build Folder
 
 ```sh
 yarn remove-build-folder
 ```
 
-## Run tests
+## Run Tests
 
 ```
 yarn test
 ```
 
-## Code formatting
+## Code Formatting
 
 Run [Prettier](https://prettier.io/) to check formatting rules:
 
