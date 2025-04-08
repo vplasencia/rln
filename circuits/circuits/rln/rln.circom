@@ -49,7 +49,7 @@ template RLN(MAX_DEPTH, LIMIT_BIT_SIZE) {
 
     // messageId range check
     // Check 0 <= messageId < userMessageLimit
-    var isInRange = RangeCheck(LIMIT_BIT_SIZE)(messageId, userMessageLimit);
+    signal isInRange <== RangeCheck(LIMIT_BIT_SIZE)(messageId, userMessageLimit);
     isInRange === 1;
 
     // SSS share calculations
